@@ -28,7 +28,7 @@
         validClass: defaultOptions.validClass
     };
 
-    $.validator.unobtrusive.reparse = $.validator.unobtrusive.reparse|| function(formSelector) {
+    $.validator.unobtrusive.reparse = $.validator.unobtrusive.reparse || function(formSelector) {
         var $form = $(formSelector).removeData('validator').removeData('unobtrusiveValidation');
         $.validator.unobtrusive.parse($form);
     };
