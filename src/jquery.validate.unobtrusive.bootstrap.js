@@ -1,19 +1,19 @@
 ﻿(function($) {
     var defaultOptions = {
-        errorClass: 'has-error',
-        validClass: 'has-success',
-
-        highlight: function (element, errorClass, validClass) {
+        errorClass: 'text-danger',
+        validClass: 'text-success',
+        
+        highlight: function (element) {
             var $formGroup = $(element).closest('.form-group');
-            $formGroup.addClass(errorClass).removeClass(validClass);
+            $formGroup.addClass('has-error').removeClass('has-success');
 
             if ($formGroup.hasClass('has-feedback')) {
                 $formGroup.find('.glyphicon').removeClass('glyphicon-ok').addClass('glyphicon-remove');
             }
         },
-        unhighlight: function (element, errorClass, validClass) {
+        unhighlight: function (element) {
             var $formGroup = $(element).closest('.form-group');
-            $formGroup.removeClass(errorClass).addClass(validClass);
+            $formGroup.addClass('has-success').removeClass('has-error');
 
             if ($formGroup.hasClass('has-feedback')) {
                 $formGroup.find('.glyphicon').removeClass('glyphicon-remove').addClass('glyphicon-ok');
